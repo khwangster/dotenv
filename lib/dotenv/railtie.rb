@@ -5,7 +5,7 @@ module Dotenv
     rake_tasks do
       task :dotenv do
         # If the dotenv task is defined, then dotenv has already been loaded.
-        warn "The `dotenv` task is no longer needed and will be removed in 1.0."
+        puts "The `dotenv` task is no longer needed and will be removed in 1.0."
       end
     end
   end

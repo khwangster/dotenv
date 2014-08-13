@@ -1,4 +1,4 @@
-warn "Capistrano support has been moved to the dotenv-deployment gem. Add it " +
+puts "Capistrano support has been moved to the dotenv-deployment gem. Add it " +
   "to your Gemfile and change the require to 'dotenv/deployment/capistrano'. " +
   "See https://github.com/bkeepers/dotenv-deployment#capistrano."
 
