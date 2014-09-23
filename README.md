@@ -67,18 +67,17 @@ S3_BUCKET=YOURS3BUCKET
 SECRET_KEY=YOURSECRETKEYGOESHERE
 ```
 
+If you need multiline variables, for example private keys, you can double quote strings and use the `\n` character for newlines:
+
+```shell
+PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nHkVN9…\n-----END DSA PRIVATE KEY-----\n"
+```
+
 You may also add `export` in front of each line so you can `source` the file in bash:
 
 ```shell
 export S3_BUCKET=YOURS3BUCKET
 export SECRET_KEY=YOURSECRETKEYGOESHERE
-```
-
-An alternate yaml-like syntax is supported:
-
-```yaml
-S3_BUCKET: yamlstyleforyours3bucket
-SECRET_KEY: thisisalsoanokaysecret
 ```
 
 Whenever your application loads, these variables will be available in `ENV`:
@@ -92,6 +91,8 @@ config.fog_directory  = ENV['S3_BUCKET']
 It is recommended that you store development-only settings in your `.env` file, and commit it to your repository. Make sure that all your credentials for your development environment are different from your other deployments. This makes it easy for other developers to get started on your project, without compromising your credentials for other environments.
 
 ## Contributing
+
+If you want a better idea of how dotenv works, check out the [Ruby Rogues Code Reading of dotenv](https://www.youtube.com/watch?v=lKmY_0uY86s).
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
